@@ -7,4 +7,5 @@ public interface Image {
     BufferedImage read(String filePath) throws IOException;
     int getHeight() throws Exception;
     int getWidth() throws Exception;
+    int[][] getPixels() throws Exception;
 }
