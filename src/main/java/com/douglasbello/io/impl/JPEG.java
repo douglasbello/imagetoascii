@@ -11,6 +11,10 @@ import java.io.IOException;
 public class JPEG implements Image {
     private BufferedImage image;
 
+    public JPEG(String filePath) throws IOException {
+        read(filePath);
+    }
+
     @Override
     public BufferedImage read(String filePath) throws IOException {
         BufferedImage image = ImageIO.read(new File(filePath));
