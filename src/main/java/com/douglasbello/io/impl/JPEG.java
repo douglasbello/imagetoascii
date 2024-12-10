@@ -122,4 +122,17 @@ public class JPEG implements Image {
         int index = brightness / this.ASCII.length();
         return this.ASCII.charAt(index);
     }
+
+    @Override
+    public void draw() throws Exception {
+        int[][] pixels = getPixels();
+        int[][] brightness = pixelsBrightness(pixels);
+
+        for (int row = 0; row < brightness.length; row++) {
+            for (int col = 0; col < brightness[row].length; col++) {
+                System.out.print(getCharByBrightness(brightness[row][col]));
+            }
+            System.out.println();
+        }
+    }
 }

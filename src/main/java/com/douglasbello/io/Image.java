@@ -11,4 +11,5 @@ public interface Image {
     int[][] pixelsBrightness(int[][] pixels) throws Exception;
     int pixelAverage(int[] rgb) throws Exception;
     char getCharByBrightness(int brightness);
+    void draw() throws Exception;
 }

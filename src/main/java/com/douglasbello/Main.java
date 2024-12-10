@@ -9,10 +9,8 @@ public class Main {
 
         int[][] brightness = jpeg.pixelsBrightness(pixels);
 
-        for (int[] bright : brightness) {
-            for (int color : bright) {
-                System.out.println(color);
-            }
-        }
+        String test = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
+
+        jpeg.draw();
     }
 }
