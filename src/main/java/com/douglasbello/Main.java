@@ -2,15 +2,17 @@ package com.douglasbello;
 
 import com.douglasbello.io.impl.JPEG;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-
         JPEG jpeg = new JPEG("C:\\Users\\douglas.bello\\Downloads\\ascii.jpeg");
-        System.out.println(jpeg.getWidth());
+        int[][] pixels = jpeg.getPixels();
 
-        sc.close();
+        int[][] brightness = jpeg.pixelsBrightness(pixels);
+
+        for (int[] bright : brightness) {
+            for (int color : bright) {
+                System.out.println(color);
+            }
+        }
     }
 }

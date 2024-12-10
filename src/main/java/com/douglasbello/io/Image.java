@@ -8,4 +8,6 @@ public interface Image {
     int getHeight() throws Exception;
     int getWidth() throws Exception;
     int[][] getPixels() throws Exception;
+    int[][] pixelsBrightness(int[][] pixels) throws Exception;
+    int pixelAverage(int[] rgb) throws Exception;
 }

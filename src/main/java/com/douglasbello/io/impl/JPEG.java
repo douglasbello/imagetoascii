@@ -29,7 +29,7 @@ public class JPEG implements Image {
             throw new Exception("image not loaded yet");
         }
 
-        return this.getWidth();
+        return this.image.getHeight();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class JPEG implements Image {
             throw new Exception("image not loaded yet");
         }
 
-        return this.getHeight();
+        return this.image.getWidth();
     }
 
     @Override
@@ -88,5 +88,31 @@ public class JPEG implements Image {
         }
 
         return result;
+    }
+
+    @Override
+    public int[][] pixelsBrightness(int[][] pixels) throws Exception {
+        int[][] brightness = new int[pixels.length][pixels.length];
+
+        for (int row = 0; row < pixels.length; row++) {
+            for (int col = 0; col < pixels[row].length; col++) {
+                int argb = pixels[row][col];
+
+                int alpha = (argb >> 24) & 0xFF;
+                int red = (argb >> 16) & 0xFF;
+                int green = (argb >> 8) & 0xFF;
+                int blue = argb & 0xFF;
+
+                int[] color = {alpha, red, green, blue};
+                brightness[row][col] = pixelAverage(color);
+            }
+        }
+
+        return brightness;
+    }
+
+    @Override
+    public int pixelAverage(int[] rgb) throws Exception {
+        return (rgb[1] + rgb[2] + rgb[3]) / 3;
     }
 }
