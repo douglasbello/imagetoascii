@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class JPEG implements Image {
     private BufferedImage image;
+    private static final String ASCII = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
 
     public JPEG(String filePath) throws IOException {
         read(filePath);
