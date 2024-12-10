@@ -116,4 +116,10 @@ public class JPEG implements Image {
     public int pixelAverage(int[] rgb) throws Exception {
         return (rgb[1] + rgb[2] + rgb[3]) / 3;
     }
+
+    @Override
+    public char getCharByBrightness(int brightness) {
+        int index = brightness / this.ASCII.length();
+        return this.ASCII.charAt(index);
+    }
 }
