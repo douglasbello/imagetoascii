@@ -119,7 +119,7 @@ public class JPEG implements Image {
 
     @Override
     public char getCharByBrightness(int brightness) {
-        int index = brightness / this.ASCII.length();
+        int index = (int) Math.floor(brightness * (ASCII.length() - 1) / 255.0);
         return this.ASCII.charAt(index);
     }
 
